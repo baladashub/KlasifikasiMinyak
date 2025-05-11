@@ -1,0 +1,25 @@
+2025-05-08 02:55:26,558 - INFO - Loading .env from: C:\laragon\www\klasifikasiMinyak\.env
+2025-05-08 02:55:26,562 - INFO - Database config - Host: 127.0.0.1, Database: klasifikasiMinyak, User: root
+2025-05-08 02:55:26,563 - INFO - Testing direct MySQL connection...
+2025-05-08 02:55:26,580 - INFO - \u2705 Direct MySQL connection successful!
+2025-05-08 02:55:26,650 - INFO - Tables in database: ['cache', 'cache_locks', 'daily_entries', 'failed_jobs', 'hourly_entries', 'job_batches', 'jobs', 'klasifikasi', 'migrations', 'password_reset_tokens', 'sessions', 'uploaded_files', 'users']
+2025-05-08 02:55:26,650 - INFO - Records in daily_entries: 1091
+2025-05-08 02:55:26,651 - INFO - Attempting to connect with SQLAlchemy...
+2025-05-08 02:55:26,669 - INFO - \u2705 SQLAlchemy connection successful!
+2025-05-08 02:55:26,672 - ERROR - \u274c Error: Not an executable object: 'SELECT COUNT(*) as total FROM daily_entries'
+Stack trace:
+Traceback (most recent call last):
+  File "C:\Users\dhyna\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1412, in execute
+    meth = statement._execute_on_connection
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute '_execute_on_connection'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\laragon\www\klasifikasiMinyak\app\python\Labelling_data.py", line 80, in <module>
+    result = connection.execute("SELECT COUNT(*) as total FROM daily_entries")
+  File "C:\Users\dhyna\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1414, in execute
+    raise exc.ObjectNotExecutableError(statement) from err
+sqlalchemy.exc.ObjectNotExecutableError: Not an executable object: 'SELECT COUNT(*) as total FROM daily_entries'
+
